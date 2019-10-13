@@ -1,5 +1,5 @@
 import moment from 'moment';
-import api from '../api';
+import getApi from '../api';
 
 const state = {
   issues: [],
@@ -125,8 +125,10 @@ const mutations = {
 
 const actions = {
   async getIssues() {
-    const { getIssues } = api;
-    mutations.setIssues(await getIssues());
+    const { getIssues } = getApi();
+    if (getIssues) {
+      mutations.setIssues(await getIssues());
+    }
   }
 };
 

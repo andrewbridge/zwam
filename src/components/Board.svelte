@@ -5,7 +5,9 @@
 
     import * as store from '../store/issues';
 
-    const { state: { repo: name } } = rootStore;
+    const { state: { repo, author } } = rootStore;
+
+    const name = `${author}/${repo}`;
 
     let lanes = [];
     store.actions.getIssues().then(() => {

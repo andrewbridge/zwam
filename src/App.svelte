@@ -1,5 +1,11 @@
 <script>
+	import store from './store';
 	import Board from './components/Board.svelte';
+
+	const { state: { author, repo } } = store;
+	const boardAvailable = author && repo;
+
+	console.log(boardAvailable);
 </script>
 
 <style>
@@ -14,4 +20,6 @@
 	}
 </style>
 
-<Board></Board>
+{#if boardAvailable}
+	<Board></Board>
+{/if}

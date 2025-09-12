@@ -14,7 +14,7 @@
   "dependencies": {
     "moment": "^2.24.0",
     "rlite-router": "^2.0.3",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^3.0.0"
   },
   "scripts": {
     "build": "rollup -c",
